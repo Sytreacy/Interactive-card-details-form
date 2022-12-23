@@ -4,7 +4,7 @@
   font-weight: 500;
 }
 
-:root{
+:root {
   --error: hsl(0, 100%, 66%);
   --white: hsl(0, 0%, 100%);
   --light-grayish-violet: hsl(270, 3%, 87%);
@@ -14,7 +14,9 @@
   --dark-purple: hsl(278, 94%, 30%);
 }
 
-*, *::before, *::after{
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -34,48 +36,54 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
-body{
+body {
   overflow-x: hidden;
 }
 
 /* position */
-.p-relative{
+.p-relative {
   position: relative;
 }
 
-.p-absolute{
+.p-absolute {
   position: absolute;
 }
 
 /* flex styles */
-.d-flex{
+.d-flex {
   display: flex;
 }
 
-.d-flex_col{
+.d-flex_col {
   flex-direction: column;
 }
 
-.flex_50{
+.flex_50 {
   flex: 50%;
 }
 
-.txt-white{
+.txt-white {
   color: var(--white);
 }
 
-/* card-container */
+/* card-container section*/
+.card-img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+}
+
 /* back of the card */
-.card-container_back{
+.card-container_back {
   top: 7%;
   right: 5%;
 }
 
-.cards{
+.cards {
   width: 260px;
 }
 
-.card-back_cvc{
+.card-back_cvc {
   top: -82px;
   right: -80%;
   font-size: 0.5rem;
@@ -83,33 +91,33 @@ body{
 }
 
 /* front of the card */
-.card-container_front{
-  top: 21.1%;
+.card-container_front {
+  top: 20.7%;
   left: 5%;
 }
 
-.card-info-container{
+.card-info-container {
   top: -69px;
   right: 0;
   align-items: center;
   gap: 0.75em;
 }
 
-.circles{
+.circles {
   top: -60px;
   left: 6%;
   gap: 0.5em;
 }
 
-.big-circle{
+.big-circle {
   width: 25px;
   display: block;
   aspect-ratio: 1/1;
   border-radius: 1em;
-  background: var(--white);  
+  background: var(--white);
 }
 
-.small-circle{
+.small-circle {
   width: 13px;
   display: block;
   aspect-ratio: 1/1;
@@ -118,11 +126,11 @@ body{
   align-self: center;
 }
 
-.cardNo{
+.cardNo {
   letter-spacing: 0.15rem;
 }
 
-.cardholder-info{
+.cardholder-info {
   font-size: 0.5rem;
   justify-content: space-between;
   width: 85%;
@@ -132,51 +140,132 @@ body{
 }
 
 /* form */
-form{
+form {
   margin: 4em 1.5em;
   gap: 1em;
 }
 
-label{
+label {
   text-transform: uppercase;
   font-size: 0.75rem;
   letter-spacing: 0.07rem;
   color: var(--very-dark-violet);
 }
 
-input{
+input {
   border: 1px solid var(--light-grayish-violet);
   border-radius: 0.5em;
   padding: 0.5em 0.75em;
   margin-top: 0.35em;
   width: 100%;
   font-size: 1.04rem;
+  color: var(--very-dark-violet);
+  cursor: pointer;
 }
 
-::placeholder{
+::placeholder {
   opacity: 0.25;
 }
 
-.month-cvc-container{
+.month-cvc-container {
   gap: 0.75em;
 }
 
-.expire-fields-container{
+.expire-fields-container {
   gap: 0.5em;
 }
 
-.expire-fields{
+.expire-fields {
   width: 100%;
 }
 
-.confirm-btn{
-  background: var(--very-dark-violet);
+input.valid {
+  border: 1px solid var(--dark-purple);
+}
+
+input.invalid {
+  border: 1px solid var(--error);
+}
+
+.error-msg {
+  display: none;
+  font-size: 0.75rem;
+  margin-top: 0.5em;
+  color: var(--error);
+}
+
+.confirm-btn {
+  background-color: var(--very-dark-violet);
   padding: 1em;
   border-radius: 0.5em;
   margin-top: 0.65em;
   font-size: 1.04rem;
 }
 
-@media all and (min-width: 375px) {
-  
+.confirm-btn:hover {
+  background-color: var(--dark-purple);
+}
+
+@media all and (min-width: 550px) {
+  .card-container_back {
+    right: 15%;
+  }
+
+  .card-container_front {
+    left: 15%;
+  }
+
+  form {
+    max-width: 400px;
+    margin: 3em auto;
+  }
+}
+
+@media all and (min-width: 700px) {}
+
+@media all and (min-width: 800px) {
+  main {
+    display: flex;
+    align-items: center;
+  }
+
+  section {
+    max-width: 50%;
+  }
+
+  .card-img {
+    all: unset;
+    height: 100vh;
+  }
+
+  .card-container_front {
+    top: 24.7%;
+    left: 10%;
+  }
+
+  .card-container_back {
+    top: 54%;
+    left: 5%;
+    width: fit-content;
+  }
+
+  .card-back_cvc {
+    left: 79%;
+    width: fit-content;
+  }
+
+  form {
+    flex: 2;
+  }
+}
+
+@media all and (min-width:900px) {
+  .card-container_back {
+    top: 54%;
+    left: 15%;
+  }
+
+  .card-back_cvc {
+    left: 81%;
+  }
 }
