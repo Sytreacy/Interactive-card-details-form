@@ -19,9 +19,6 @@ function validate(regex, field) {
 
 inputs.forEach((input) => {
   input.addEventListener("keyup", (e) => {
-    console.log(e.target.attributes.name.value);
-    console.log(input);
-    console.log(input.parentElement.parentElement.lastElementChild);
     validate(patterns[e.target.attributes.name.value], input);
   });
 });

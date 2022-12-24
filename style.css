@@ -77,6 +77,8 @@ body {
 .card-container_back {
   top: 7%;
   right: 5%;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 35px 50px -12px;
+  border-radius: 0.25em;
 }
 
 .cards {
@@ -84,28 +86,32 @@ body {
 }
 
 .card-back_cvc {
-  top: -82px;
-  right: -80%;
+  width: fit-content;
   font-size: 0.5rem;
   letter-spacing: 0.1rem;
+  top: 65px;
+  right: 30px;
 }
 
 /* front of the card */
 .card-container_front {
   top: 20.7%;
   left: 5%;
+  width: fit-content;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 35px 50px -12px;
+  border-radius: 0.25em;
 }
 
 .card-info-container {
-  top: -69px;
-  right: 0;
+  width: 100%;
+  height: 100%;
+  padding: 1.1em;
+  justify-content: space-between;
   align-items: center;
-  gap: 0.75em;
 }
 
 .circles {
-  top: -60px;
-  left: 6%;
+  align-self: flex-start;
   gap: 0.5em;
 }
 
@@ -128,12 +134,12 @@ body {
 
 .cardNo {
   letter-spacing: 0.15rem;
+  margin-bottom: 0.7em;
 }
 
 .cardholder-info {
   font-size: 0.5rem;
   justify-content: space-between;
-  width: 85%;
   text-transform: uppercase;
   color: var(--light-grayish-violet);
   letter-spacing: 0.05rem;
@@ -141,7 +147,7 @@ body {
 
 /* form */
 form {
-  margin: 4em 1.5em;
+  margin: 4.5em 1.5em;
   gap: 1em;
 }
 
@@ -206,6 +212,38 @@ input.invalid {
   background-color: var(--dark-purple);
 }
 
+@media all and (min-width: 375px) {
+  .card-container_front {
+    -webkit-animation: front-card_to-right 2s ease 0s infinite alternate-reverse both;
+    animation: front-card_to-right 2s ease 0s infinite alternate-reverse both;
+  }
+
+  @keyframes front-card_to-right {
+    0% {
+      transform: translateX(70px);
+    }
+
+    100% {
+      transform: translateX(-10px);
+    }
+  }
+
+  .card-container_back {
+    -webkit-animation: back-card_to-left 2s ease 0s infinite alternate-reverse both;
+    animation: back-card_to-left 2s ease 0s infinite alternate-reverse both;
+  }
+
+  @keyframes back-card_to-left {
+    0% {
+      transform: translateX(-50px);
+    }
+
+    100% {
+      transform: translateX(5px);
+    }
+  }
+}
+
 @media all and (min-width: 550px) {
   .card-container_back {
     right: 15%;
@@ -217,20 +255,14 @@ input.invalid {
 
   form {
     max-width: 400px;
-    margin: 3em auto;
+    margin: 4.5em auto;
   }
 }
-
-@media all and (min-width: 700px) {}
 
 @media all and (min-width: 800px) {
   main {
     display: flex;
     align-items: center;
-  }
-
-  section {
-    max-width: 50%;
   }
 
   .card-img {
@@ -241,17 +273,14 @@ input.invalid {
   .card-container_front {
     top: 24.7%;
     left: 10%;
+    animation: none;
   }
 
   .card-container_back {
     top: 54%;
     left: 5%;
     width: fit-content;
-  }
-
-  .card-back_cvc {
-    left: 79%;
-    width: fit-content;
+    animation: none;
   }
 
   form {
@@ -259,13 +288,8 @@ input.invalid {
   }
 }
 
-@media all and (min-width:900px) {
+@media all and (min-width:1000px) {
   .card-container_back {
-    top: 54%;
     left: 15%;
-  }
-
-  .card-back_cvc {
-    left: 81%;
   }
 }

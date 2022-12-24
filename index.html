@@ -15,36 +15,36 @@
   <main>
     <section class="container">
       <div>
-
         <picture>
           <source media="(min-width: 500px)" srcset="images/bg-main-desktop.png">
           <img class="card-img" src="images/bg-main-mobile.png" alt="background image">
         </picture>
 
         <section title="card-container">
-          <div class="card-container_back p-absolute">
+          <div class="card-container_back p-absolute d-flex">
             <img class="cards" src="images/bg-card-back.png" alt="back of the card image">
-            <p class="p-relative card-back_cvc letter-spacing_1 txt-white">000</p>
+            <p class="card-back_cvc p-absolute txt-white">000</p>
           </div>
 
-          <div class="card-container_front p-absolute">
+          <div class="card-container_front p-absolute d-flex">
             <img class="cards" src="images/bg-card-front.png" alt="front of the card image">
 
-            <div class="d-flex d-flex_col p-relative card-info-container txt-white">
-              <div class="circles p-absolute d-flex">
+            <div class="d-flex d-flex_col card-info-container p-absolute txt-white">
+              <div class="circles d-flex">
                 <span class="big-circle"></span>
                 <span class="small-circle"></span>
               </div>
 
-              <p class="cardNo">0000 0000 0000 0000</p>
-              <div class="d-flex cardholder-info">
-                <p>Jane Appleseed</p>
-                <p>00/00</p>
+              <div>
+                <p class="cardNo">0000 0000 0000 0000</p>
+                <div class="d-flex cardholder-info">
+                  <p>Jane Appleseed</p>
+                  <p>00/00</p>
+                </div>
               </div>
             </div>
           </div>
         </section>
-
       </div>
     </section>
 
