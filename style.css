@@ -194,13 +194,17 @@ input.invalid {
 }
 
 .error-msg {
-  display: none;
   font-size: 0.75rem;
   margin-top: 0.5em;
   color: var(--error);
 }
 
 .confirm-btn {
+  cursor: no-drop;
+}
+
+.confirm-btn,
+.continue-btn {
   background-color: var(--very-dark-violet);
   padding: 1em;
   border-radius: 0.5em;
@@ -208,8 +212,38 @@ input.invalid {
   font-size: 1.04rem;
 }
 
-.confirm-btn:hover {
+.confirm-btn:hover,
+.continue-btn:hover {
   background-color: var(--dark-purple);
+}
+
+/* card successfully added */
+.card-success-container {
+  max-width: 400px;
+  margin: 4.5em 1.5em;
+  align-items: center;
+  gap: 1.5em;
+}
+
+.success-icon {
+  width: 80px;
+}
+
+.thanks {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--very-dark-violet);
+  font-size: x-large;
+  font-weight: normal;
+}
+
+.inform-txt {
+  color: var(--Dark-grayish-violet);
+}
+
+.continue-btn {
+  align-self: stretch;
+  margin-top: 1.5em;
 }
 
 @media all and (min-width: 375px) {
