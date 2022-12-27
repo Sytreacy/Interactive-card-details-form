@@ -75,8 +75,8 @@ body {
 
 /* back of the card */
 .card-container_back {
-  top: 7%;
-  right: 5%;
+  top: 2.6em;
+  right: 1.5em;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 35px 50px -12px;
   border-radius: 0.25em;
 }
@@ -95,8 +95,8 @@ body {
 
 /* front of the card */
 .card-container_front {
-  top: 20.7%;
-  left: 5%;
+  top: 7.7em;
+  left: 1.5em;
   width: fit-content;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 35px 50px -12px;
   border-radius: 0.25em;
@@ -283,11 +283,11 @@ input.invalid {
 
 @media all and (min-width: 550px) {
   .card-container_back {
-    right: 15%;
+    right: 4.5em;
   }
 
   .card-container_front {
-    left: 15%;
+    left: 4.5em;
   }
 
   form {
@@ -308,14 +308,14 @@ input.invalid {
   }
 
   .card-container_front {
-    top: 24.7%;
-    left: 10%;
+    top: 9em;
+    left: 5em;
     animation: none;
   }
 
   .card-container_back {
-    top: 54%;
-    left: 5%;
+    top: 19.8em;
+    left: 3em;
     width: fit-content;
     animation: none;
   }
@@ -327,6 +327,6 @@ input.invalid {
 
 @media all and (min-width:1000px) {
   .card-container_back {
-    left: 15%;
+    left: 9.8em;
   }
 }
