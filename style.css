@@ -218,9 +218,12 @@ input.invalid {
 }
 
 /* card successfully added */
+#card-success-container {
+  display: none;
+}
+
 .card-success-container {
   max-width: 400px;
-  margin: 4.5em 1.5em;
   align-items: center;
   gap: 1.5em;
 }

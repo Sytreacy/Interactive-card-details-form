@@ -96,27 +96,22 @@ function saveInputs(field) {
   switch (field.attributes.name.value) {
     case "cardholder":
       cardholder = field.value;
-      console.log(cardholder);
       break;
 
     case "cardnumber":
       cardnumber = field.value;
-      console.log(cardnumber);
       break;
 
     case "expire_month":
       expire_month = field.value;
-      console.log(expire_month);
       break;
 
     case "expire_year":
       expire_year = field.value;
-      console.log(expire_year);
       break;
 
     case "cvc":
       cvc = field.value;
-      console.log(cvc);
       break;
 
     default:
@@ -130,26 +125,64 @@ inputs.forEach((input) => {
   });
 });
 
-const form = document.getElementsByTagName("form")[0];
-const successDiv = document.querySelector(".card-success-container");
+function showSuccessDiv() {
+  const form = document.getElementsByTagName("form")[0];
+  const successDiv = document.getElementById("card-success-container");
 
-function displaySavedData() {
+  form.innerHTML = successDiv.innerHTML;
+}
+
+function displaySavedData(e) {
+  e.preventDefault();
   addSpace = cardnumber.match(/.{1,4}/g);
   finalCardNo = addSpace.join(" ");
   document.querySelector(".card-back_cvc").textContent = cvc;
-  document.getElementsByClassName("cardNo")[0].textContent = finalCardNo;
+  document.querySelector(".cardNo").textContent = finalCardNo;
   document.querySelector(".cardholder-info > p").textContent = cardholder;
   document.querySelector(
     ".cardholder-info > p+p"
   ).textContent = `${expire_month} / ${expire_year}`;
+  showSuccessDiv();
 }
 
 confirmBtn.addEventListener("click", displaySavedData);
 
-//not working yet
-// let cardNoField = document.querySelector("#cardnumber");
-// cardNoField.addEventListener("keydown", () => {
-//   if (cardNoField.value.length % 4 == 0) {
-//     cardNoField.value += " ";
+// not working
+// function addSpace(regex, field) {
+//   //add space after every 4 characters in cardnumber field
+//   let cardNoValue = document.getElementById(field.attributes.name.value);
+//   let finalValue;
+//   cardNoValue.addEventListener("keydown", () => {
+//     if (cardNoValue.value.length > 0) {
+//       if (cardNoValue.value.length % 4 === 0) {
+//         cardNoValue.value += "    "; // need type="text" for this to work
+//       }
+//     }
+
+//     // put the value into array index rooms once it see space
+//     finalValue = cardNoValue.value.split("    ");
+
+//     //change array to string and remove ","
+//     finalValue = cardNoValue.toString().replace(/\,/g, "");
+
+//     //validate
+//     if (regex.test(finalValue)) {
+//       cardNoValue.className = "valid";
+//       removeError(cardNoValue);
+//       saveInputs(cardNoValue);
+//       confirmBtn.disabled = false;
+//       confirmBtn.style.cursor = "pointer";
+//     } else {
+//       cardNoValue.className = "invalid";
+//       displayError(cardNoValue);
+//     }
+//   });
+// }
+
+// function validate(regex, field) {
+//   if (field.attributes.name.value == "cardnumber") {
+//     addSpace(regex, field);
+//   } else {
+//     validateAll(regex, field);
 //   }
-// });
+// }
