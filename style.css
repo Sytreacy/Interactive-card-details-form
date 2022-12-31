@@ -308,16 +308,16 @@ input.invalid {
   }
 
   .card-container_front {
-    top: 9em;
-    left: 5em;
     animation: none;
+    top: 24.5%;
+    left: 10%;
   }
 
   .card-container_back {
-    top: 19.8em;
-    left: 3em;
     width: fit-content;
     animation: none;
+    top: 54%;
+    left: 6%;
   }
 
   form {
@@ -327,6 +327,15 @@ input.invalid {
 
 @media all and (min-width:1000px) {
   .card-container_back {
-    left: 9.8em;
+    left: -40%;
+    margin: auto;
+  }
+}
+
+@media all and (min-width: 1400px) {
+  .card-container_front {
+    left: 25%;
+    top: 35%;
+    transform: translate(-25%, -35%);
   }
 }
