@@ -1,6 +1,6 @@
 # Interactive card detail form challenge by frontend mentor
 
-:link: visit demo from [here](https://sytreacy.github.io/product-preview-card-component-challenge/)
+:link: visit demo from [here](https://sytreacy.github.io/Interactive-card-details-form/)
 
 > Interactive card detail form preview: 
 
